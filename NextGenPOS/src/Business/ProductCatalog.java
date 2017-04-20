@@ -20,4 +20,8 @@ public class ProductCatalog {
         productMap.put(itemID, product);
     }
     
+    public Map<String,ProductDescription> getAllProductDescriptions(){
+        return productMap;
+    }
+    
 }

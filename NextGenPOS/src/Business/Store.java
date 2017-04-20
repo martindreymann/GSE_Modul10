@@ -65,5 +65,10 @@ public class Store implements IBusiness {
  
         
     }
+    
+    @Override
+    public Map<String,ProductDescription> getAllProductDescriptions(){
+        return catalog.getAllProductDescriptions();
+    }
 
 }
