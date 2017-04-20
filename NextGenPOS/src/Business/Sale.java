@@ -11,8 +11,8 @@ public class Sale {
     public Sale() {
         date = new Date();
     }
-    public void makeLineItem(){
-        
+    public void makeLineItem(ProductDescription desc, int quantity){
+        salesLineItems.add(new SalesLineItem(desc, quantity));
     }
 
     public Date getDate() {

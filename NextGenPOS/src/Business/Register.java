@@ -7,7 +7,11 @@ public class Register {
     
     public void makeNewSale(){}
     
-    public void enterItem(String itemID, int quantity){}
+    public void enterItem(String itemID, int quantity){
+        ProductDescription desc = catalog.getProductDescription(itemID);
+        currentSale.makeLineItem(desc, quantity);
+        
+    }
     
     public void endSale(){}
     
