@@ -10,9 +10,10 @@ public class Register {
     private List<Sale> salesLog;
     private String registerName;        //Required to differentiate between them
 
-    public Register(String name) {
+    public Register(String name, ProductCatalog catalog) {
         salesLog = new ArrayList<>();
         this.registerName = name;
+        this.catalog = catalog;
     }
 
     public void makeNewSale() {
@@ -27,7 +28,7 @@ public class Register {
 
     public void makePayment(float amount) {
         //Check if payment is enough
-        if(amount <= currentSale.getTotalPrice()){
+        if(amount < currentSale.getTotalPrice()){
             paymentInsufficient();
             return;
         }        
@@ -46,6 +47,10 @@ public class Register {
         List<Sale> temp = salesLog;
         salesLog.clear();
         return temp;
+    }
+    
+    public float getCurrentPrice(){
+        return currentSale.getTotalPrice();
     }
     
     

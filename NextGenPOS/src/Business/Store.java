@@ -29,7 +29,7 @@ public class Store {
     }
     
     public void createNewRegister(String name){
-        registers.put(name,new Register(name));
+        registers.put(name,new Register(name,catalog));
     }
     
     public Register getRegister(String name){
