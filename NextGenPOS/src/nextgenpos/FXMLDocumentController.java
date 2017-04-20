@@ -5,7 +5,9 @@
  */
 package nextgenpos;
 
+import Business.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +27,9 @@ import javafx.scene.control.ToggleGroup;
  * @author phoel
  */
 public class FXMLDocumentController implements Initializable {
+    private ArrayList<SalesLineItem> basket;
+    private Register currentRegister;
+    private IBusiness buis;
     
     @FXML
     private TextField findProductTextField;
@@ -37,6 +42,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button addSelectedButton;
     @FXML
+    private TableView<SalesLineItem> productTableview;
+    @FXML
     private TableColumn<?, ?> productName;
     @FXML
     private TableColumn<?, ?> productDescription;
@@ -45,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button buyButton;
     @FXML
-    private TableView<?> basketTableView;
+    private TableView<SalesLineItem> basketTableView;
     @FXML
     private TableColumn<?, ?> basketName;
     @FXML
@@ -55,7 +62,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn<?, ?> basketPrice;
     @FXML
-    private TableView<?> salesTableview;
+    private TableView<Sale> salesTableview;
     @FXML
     private TableColumn<?, ?> salesItems;
     @FXML
@@ -74,12 +81,14 @@ public class FXMLDocumentController implements Initializable {
     private RadioButton register4RadioButton;
     @FXML
     private Spinner<Integer> orderSpinner;
+
     
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         orderSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 70, 1));
+        basket = new ArrayList<>();
     }    
 
     @FXML
@@ -96,10 +105,16 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void changeRegister(ActionEvent event) {
+        if(register1RadioButton.isSelected()){
+            currentRegister = buis.getRegisters().get("Register1");
+        } else if(register2RadioButton.isSelected()){
+            currentRegister = buis.getRegisters().get("Register2");
+        } else if(register3RadioButton.isSelected()){
+            currentRegister = buis.getRegisters().get("Register3");
+        } else{
+            currentRegister = buis.getRegisters().get("Register4");
+        }
     }
 
-    @FXML
-    private void change(ActionEvent event) {
-    }
     
 }
