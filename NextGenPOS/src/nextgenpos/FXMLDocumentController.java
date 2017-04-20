@@ -12,8 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 /**
  *
@@ -21,6 +24,7 @@ import javafx.scene.control.TextField;
  */
 public class FXMLDocumentController implements Initializable {
     
+    @FXML
     private TextField findProductTextField;
     @FXML
     private TextField salesAmountTextField;
@@ -40,6 +44,34 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn<?, ?> productPrice;
     @FXML
     private Button buyButton;
+    @FXML
+    private TableView<?> basketTableView;
+    @FXML
+    private TableColumn<?, ?> basketName;
+    @FXML
+    private TableColumn<?, ?> basketDescription;
+    @FXML
+    private TableColumn<?, ?> basketquantity;
+    @FXML
+    private TableColumn<?, ?> basketPrice;
+    @FXML
+    private TableView<?> salesTableview;
+    @FXML
+    private TableColumn<?, ?> salesItems;
+    @FXML
+    private TableColumn<?, ?> salesDate;
+    @FXML
+    private TableColumn<?, ?> salesPrice;
+    @FXML
+    private RadioButton register1RadioButton;
+    @FXML
+    private ToggleGroup registertogglegroup;
+    @FXML
+    private RadioButton register2RadioButton;
+    @FXML
+    private RadioButton register3RadioButton;
+    @FXML
+    private RadioButton register4RadioButton;
     
 
     
@@ -47,5 +79,17 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void FindItem(ActionEvent event) {
+    }
+
+    @FXML
+    private void addToBasket(ActionEvent event) {
+    }
+
+    @FXML
+    private void buyItemsInBasket(ActionEvent event) {
+    }
     
 }
