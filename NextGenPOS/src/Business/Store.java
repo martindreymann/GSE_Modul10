@@ -46,5 +46,24 @@ public class Store implements IBusiness {
     public Register getRegister(String name) {
         return registers.get(name);
     }
+    
+    
+    public void createTestData(){
+        
+        
+        //Make products
+        createNewProduct("1", "TV", 500);
+        createNewProduct("2", "PC", 700);
+        createNewProduct("3", "Headset", 300);
+        createNewProduct("4", "Fridge", 2000);
+        createNewProduct("5", "Something expensive", 42500);
+        
+        //Make register
+        createNewRegister("Register1");
+        createNewRegister("Register2");
+        createNewRegister("Register3");
+ 
+        
+    }
 
 }
