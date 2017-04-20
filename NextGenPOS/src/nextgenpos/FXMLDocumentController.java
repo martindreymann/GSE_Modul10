@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -26,8 +28,6 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private TextField findProductTextField;
-    @FXML
-    private TextField salesAmountTextField;
     @FXML
     private Label findItemNameLabel;
     @FXML
@@ -72,12 +72,14 @@ public class FXMLDocumentController implements Initializable {
     private RadioButton register3RadioButton;
     @FXML
     private RadioButton register4RadioButton;
+    @FXML
+    private Spinner<Integer> orderSpinner;
     
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        orderSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 70, 1));
     }    
 
     @FXML
@@ -90,6 +92,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void buyItemsInBasket(ActionEvent event) {
+    }
+
+    @FXML
+    private void changeRegister(ActionEvent event) {
+    }
+
+    @FXML
+    private void change(ActionEvent event) {
     }
     
 }
