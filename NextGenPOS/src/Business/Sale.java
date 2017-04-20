@@ -6,7 +6,7 @@ import java.util.Date;
 public class Sale {
     private Date date;
     private boolean isComplete = false;
-    private ArrayList<Sale> salesLineItems = new ArrayList<>();
+    private ArrayList<SalesLineItem> salesLineItems = new ArrayList<>();
 
     public Sale() {
         date = new Date();
@@ -19,7 +19,7 @@ public class Sale {
         return date;
     }
 
-    public ArrayList<Sale> getSalesLineItems() {
+    public ArrayList<SalesLineItem> getSalesLineItems() {
         return salesLineItems;
     }
 
