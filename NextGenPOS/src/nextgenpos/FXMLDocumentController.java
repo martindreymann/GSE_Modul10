@@ -89,6 +89,8 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         orderSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 70, 1));
         basket = new ArrayList<>();
+        buis = new Store("Store","Campus Vej 55");
+        buis.createTestData();
     }    
 
     @FXML
