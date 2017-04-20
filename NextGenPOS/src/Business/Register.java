@@ -24,7 +24,11 @@ public class Register {
     }
 
     public void makePayment(float amount) {
-        //Need to implement check for amount. Dummy implementation so far.
+        //Check if payment is enough
+        if(amount <= currentSale.getTotalPrice()){
+            paymentInsufficient();
+            return;
+        }        
         
         currentSale.setIsComplete(true);
         
@@ -35,10 +39,18 @@ public class Register {
 
     }
     
+   
     public List<Sale> getAllSales(){
         List<Sale> temp = salesLog;
         salesLog.clear();
         return temp;
+    }
+    
+    
+    
+    //Should probably be changed.
+    private void paymentInsufficient(){
+        System.out.println("The payment was insufficient. Try again");
     }
 
 }

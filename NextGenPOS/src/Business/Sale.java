@@ -32,5 +32,17 @@ public class Sale implements Comparable<Sale>{
         return date.compareTo(o.getDate());
     }
     
+    public float getTotalPrice(){
+        float price = 0;
+        
+        for(SalesLineItem sli : salesLineItems){
+            int quantity = sli.getQuantity();
+            float itemPrice = sli.getDescription().getPrice();
+            price += (quantity*itemPrice);            
+        }
+        return price;
+        
+    }
+    
     
 }
