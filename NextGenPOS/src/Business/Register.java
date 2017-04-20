@@ -7,4 +7,10 @@ public class Register {
     
     public void makeNewSale(){}
     
+    public void enterItem(String itemID, int quantity){}
+    
+    public void endSale(){}
+    
+    public void makePayment(float amount){}
+    
 }
