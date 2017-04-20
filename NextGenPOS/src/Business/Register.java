@@ -8,9 +8,11 @@ public class Register {
     private ProductCatalog catalog;
     private Sale currentSale;
     private List<Sale> salesLog;
+    private String registerName;        //Required to differentiate between them
 
-    public Register() {
+    public Register(String name) {
         salesLog = new ArrayList<>();
+        this.registerName = name;
     }
 
     public void makeNewSale() {

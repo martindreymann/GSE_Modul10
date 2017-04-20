@@ -1,7 +1,7 @@
 package Business;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,19 +9,15 @@ public class Store {
 
     private String address, name;
     private ProductCatalog catalog;
-    private List<Register> registers;
+    private Map<String,Register> registers;
     private Set<Sale> sales;
 
     public Store(String name, String address) {
         this.name = name;
         this.address = address;
         catalog = new ProductCatalog();
-        registers = new ArrayList<>();
+        registers = new HashMap<>();
         sales = new TreeSet<>();
-    }
-
-    public void registerSale(Sale sale) {
-        sales.add(sale);
     }
 
     public void getSalesFromRegister(Register register) {
@@ -31,5 +27,15 @@ public class Store {
     public void createNewProduct(String itemID, String description, float price) {
         catalog.createNewProduct(itemID, description, price);
     }
+    
+    public void createNewRegister(String name){
+        registers.put(name,new Register(name));
+    }
+    
+    public Register getRegister(String name){
+        return registers.get(name);
+    }
+    
+    
 
 }
