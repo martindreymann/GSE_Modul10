@@ -1,22 +1,44 @@
 package Business;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Register {
-    
+
     private ProductCatalog catalog;
     private Sale currentSale;
-    
-    public void makeNewSale(){
+    private List<Sale> salesLog;
+
+    public Register() {
+        salesLog = new ArrayList<>();
+    }
+
+    public void makeNewSale() {
         currentSale = new Sale();
     }
-    
-    public void enterItem(String itemID, int quantity){
+
+    public void enterItem(String itemID, int quantity) {
         ProductDescription desc = catalog.getProductDescription(itemID);
         currentSale.makeLineItem(desc, quantity);
+
+    }
+
+    public void makePayment(float amount) {
+        //Need to implement check for amount. Dummy implementation so far.
+        
+        currentSale.setIsComplete(true);
         
     }
+
+    public void endSale() {
+        salesLog.add(currentSale);
+
+    }
     
-    public void endSale(){}
-    
-    public void makePayment(float amount){}
-    
+    public List<Sale> getAllSales(){
+        List<Sale> temp = salesLog;
+        salesLog.clear();
+        return temp;
+    }
+
 }

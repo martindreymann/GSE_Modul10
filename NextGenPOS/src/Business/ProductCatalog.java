@@ -15,4 +15,9 @@ public class ProductCatalog {
         return productMap.get(itemID);
     }
     
+    public void createNewProduct(String itemID, String description, float price){
+        ProductDescription product = new ProductDescription(itemID, description, price);
+        productMap.put(itemID, product);
+    }
+    
 }
