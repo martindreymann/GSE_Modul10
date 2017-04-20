@@ -3,7 +3,7 @@ package Business;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Sale {
+public class Sale implements Comparable<Sale>{
     private Date date;
     private boolean isComplete = false;
     private ArrayList<SalesLineItem> salesLineItems = new ArrayList<>();
@@ -25,6 +25,11 @@ public class Sale {
 
     public void setIsComplete(boolean isComplete) {
         this.isComplete = isComplete;
+    }
+
+    @Override
+    public int compareTo(Sale o) {
+        return date.compareTo(o.getDate());
     }
     
     
